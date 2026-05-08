@@ -55,6 +55,6 @@ def contar_objetos(binaria, img_rgb):
             print(f" Ancho = {ancho} pix")
             print(f" Alto = {alto} pix")
 
-    print(f"Total de objetos detectados: {conteo}")
+    print(f"Total de objetos detectados:{conteo}")
 
     return resultado, conteo
