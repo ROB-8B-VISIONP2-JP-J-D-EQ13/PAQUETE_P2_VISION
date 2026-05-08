@@ -11,12 +11,15 @@ def contar_objetos(binaria, img_rgb):
         4
     )
 
+    #Copiar imagen original
     resultado = img_rgb.copy()
 
+    #Contador
     conteo = 0
 
     print("OBJETOS DETECTADOS")
 
+    #Recorrer objetos detectados
     for i in range(1, num_labels):
 
         x, y, ancho, alto, area = stats[i]
@@ -25,6 +28,26 @@ def contar_objetos(binaria, img_rgb):
         if area > 500:
 
             conteo += 1
+
+            #Rectángulo
+            cv2.rectangle(
+                resultado,
+                (x, y),
+                (x + ancho, y + alto),
+                (255, 0, 0),
+                2
+            )
+
+            #Centroide
+            cx, cy = centroids[i]
+
+            cv2.circle(
+                resultado,
+                (int(cx), int(cy)),
+                5,
+                (0, 255, 0),
+                -1
+            )
 
             #Información
             print(f"Objeto {conteo}")
