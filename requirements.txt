@@ -1,0 +1,6 @@
+Para utilizar esta libreria, es necesario
+tener instalado los siguientes paquetes:
+opencv-python
+matplotlib
+numpy
+
